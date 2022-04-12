@@ -12,10 +12,11 @@ if memo_type === "1"
     puts "メモしたい内容を記入してください"
     puts "完了したら　Ctrl+D　をおします"
 
-    content = gets.chomp.to_s
-
+    contents = $stdin.readlines.to_s
+    
     CSV.open("#{file_name}.csv","w") do |csv|
-        csv << [content]
+    csv << [contents]
+      
     end
 
 elsif memo_type === "2"
@@ -26,10 +27,10 @@ elsif memo_type === "2"
     puts "メモしたい内容を記入してください"
     puts "完了したら　Ctrl+D　をおします"
 
-    content = gets.chomp.to_s
+    contents = $stdin.readlines.to_s
     
     CSV.open("#{file_name}.csv","a") do |csv|
-    csv << [content]
+    csv << [contents]
     end
 
 else 
